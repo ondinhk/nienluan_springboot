@@ -4,6 +4,8 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
+import java.util.ArrayList;
+
 @Document(collection = "dalat_house")
 public class Dalat {
     @Id
@@ -17,7 +19,7 @@ public class Dalat {
     @Field(value = "image")
     private String image;
     @Field(value = "description")
-    private String description;
+    private ArrayList<String> description;
     @Field(value = "distance")
     private String distance;
     @Field(value = "cost")
@@ -31,7 +33,7 @@ public class Dalat {
     public Dalat() {
     }
 
-    public Dalat(Long idHouse, String title, String linkBooking, String image, String description, String distance, String cost, String rate, String label_rate, String quanlityComment) {
+    public Dalat(Long idHouse, String title, String linkBooking, String image, ArrayList<String> description, String distance, String cost, String rate, String label_rate, String quanlityComment) {
         this.idHouse = idHouse;
         this.title = title;
         this.linkBooking = linkBooking;
@@ -68,11 +70,11 @@ public class Dalat {
         this.image = image;
     }
 
-    public String getDescription() {
+    public ArrayList<String> getDescription() {
         return description;
     }
 
-    public void setDescription(String description) {
+    public void setDescription(ArrayList<String> description) {
         this.description = description;
     }
 
