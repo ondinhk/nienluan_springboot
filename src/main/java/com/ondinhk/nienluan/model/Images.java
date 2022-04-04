@@ -4,7 +4,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
-@Document(collection = "dalat_images")
+@Document(collection = "images_dalat")
 public class Images {
     @Id
     private String id;
