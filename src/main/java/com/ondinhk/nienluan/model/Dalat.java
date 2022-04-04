@@ -6,7 +6,7 @@ import org.springframework.data.mongodb.core.mapping.Field;
 
 import java.util.ArrayList;
 
-@Document(collection = "dalat_house")
+@Document(collection = "info_dalat")
 public class Dalat {
     @Id
     private String id;
