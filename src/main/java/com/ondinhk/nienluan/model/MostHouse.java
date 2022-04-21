@@ -14,8 +14,8 @@ public class MostHouse {
     private String title;
     @Field(value = "image")
     private String image;
-    @Field(value = "desciption")
-    private String desciption;
+    @Field(value = "description")
+    private String description;
     @Field(value = "cost")
     private String cost;
     @Field(value = "quanlityComment")
@@ -25,11 +25,11 @@ public class MostHouse {
     public MostHouse(){
 
     }
-    public MostHouse(String idHouse, String title, String image, String desciption, String cost, int quanlityComment, double rate) {
+    public MostHouse(String idHouse, String title, String image, String description, String cost, int quanlityComment, double rate) {
         this.idHouse = idHouse;
         this.title = title;
         this.image = image;
-        this.desciption = desciption;
+        this.description = description;
         this.cost = cost;
         this.quanlityComment = quanlityComment;
         this.rate = rate;
@@ -59,12 +59,12 @@ public class MostHouse {
         this.image = image;
     }
 
-    public String getDesciption() {
-        return desciption;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDesciption(String desciption) {
-        this.desciption = desciption;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getCost() {
