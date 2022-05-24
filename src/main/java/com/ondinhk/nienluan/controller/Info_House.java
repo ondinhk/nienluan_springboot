@@ -55,7 +55,7 @@ public class Info_House {
         }
     }
 
-    @RequestMapping("/most")
+    @RequestMapping("/top")
     ResponseEntity<ResponseObject> findMostHouseAll() {
         List<MostHouse> mostHouseList = mostHouseService.getAllMostHouse();
         if (!mostHouseList.isEmpty()) {
