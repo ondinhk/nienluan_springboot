@@ -5,6 +5,7 @@ import java.util.List;
 import com.ondinhk.nienluan.model.Comments;
 import com.ondinhk.nienluan.model.Dalat;
 import com.ondinhk.nienluan.model.Images;
+import com.ondinhk.nienluan.model.MostHouse;
 import com.ondinhk.nienluan.response.ResponseObject;
 import com.ondinhk.nienluan.response.ResponseHouse;
 import com.ondinhk.nienluan.service.*;
@@ -25,6 +26,8 @@ public class Info_House {
     IImagesService imagesService;
     @Autowired
     ICommentsService commentsService;
+    @Autowired
+    IMostHouseService   mostHouseService;
 
     @RequestMapping("/all")
     ResponseEntity<ResponseObject> findAll() {
@@ -52,5 +55,16 @@ public class Info_House {
         }
     }
 
+    @RequestMapping("/top")
+    ResponseEntity<ResponseObject> findMostHouseAll() {
+        List<MostHouse> mostHouseList = mostHouseService.getAllMostHouse();
+        if (!mostHouseList.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.OK).body(
+                    new ResponseObject("Ok", "Query Successfully", mostHouseList));
+        } else {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(
+                    new ResponseObject("Failed", "Cannot find enything", ""));
+        }
+    }
 
 }
